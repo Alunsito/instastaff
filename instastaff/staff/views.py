@@ -7,11 +7,15 @@ def index(request):
     form = RegForm(request.POST or None)
     if form.is_valid():
         form_data = form.cleaned_data
-        email = form_data.get('email')
         username = form_data.get('name')
-        emailobj = worker.objects.create(email, username)
-        print (form_data.get('name'))
+        usermail = form_data.get('email')
+        salary = form_data.get('salary_hour')
+        obj = worker(name=username, email=usermail, salary_hour= salary)
+        obj.save()
+
+        """print (form_data.get('name'))
         print (form_data.get('age'))
         print (form_data.get('mail'))
-        print (form_data.get('salary_hour'))
+        print (form_data.get('salary_hour'))"""
+        
     return render(request, "index.html", {'form': form})

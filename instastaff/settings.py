@@ -56,7 +56,7 @@ ROOT_URLCONF = 'instastaff.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'instastaff'],
+        'DIRS': [BASE_DIR / 'instastaff' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

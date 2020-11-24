@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import RegForm
 from .models import worker
+from .models import chief
+from .models import Timing
 
 # Create your views here.
 def index(request):
